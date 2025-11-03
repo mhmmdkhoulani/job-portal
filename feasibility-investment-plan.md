@@ -836,18 +836,18 @@ graph LR
 | **Gross Margin**         | N/A          | -139%        | 12%          | 65%          | **37%**      |
 |                          |              |              |              |              |              |
 | **Operating Expenses**   |              |              |              |              |              |
-| Development (Founder)    | $1,500       | $3,600       | $3,600       | $3,600       | $12,300      |
-| Marketing & Growth       | $0           | $200         | $400         | $600         | $1,200       |
-| Operations & Tools       | $300         | $600         | $600         | $600         | $2,100       |
-| **Total OpEx**           | $1,800       | $4,400       | $4,600       | $4,800       | **$15,600**  |
+| Development Team         | $500         | $2,400       | $4,200       | $5,400       | $12,500      |
+| Marketing & Growth       | $0           | $200         | $500         | $1,000       | $1,700       |
+| Operations & Tools       | $300         | $500         | $600         | $800         | $2,200       |
+| **Total OpEx**           | $800         | $3,100       | $5,300       | $7,200       | **$16,400**  |
 |                          |              |              |              |              |              |
-| **EBITDA**               | -$2,000      | -$4,608      | -$4,530      | -$3,360      | **-$14,498** |
-| **EBITDA Margin**        | N/A          | -3072%       | -755%        | -153%        | **-491%**    |
-| **Cash Position**        | $5,500       | $992         | -$3,538      | -$6,898      | -$6,898      |
+| **EBITDA**               | -$1,000      | -$3,308      | -$5,230      | -$5,760      | **-$15,298** |
+| **EBITDA Margin**        | N/A          | -2205%       | -872%        | -262%        | **-519%**    |
+| **Cash Position**        | $6,500       | $3,192       | -$2,038      | -$7,798      | -$7,798      |
 
-**Founder Investment:** $7,500 initial + $2-3K top-ups = **~$10K total**  
-**Ending Position Year 1:** -$6,898 (cumulative loss)  
-**Average Burn Rate:** ~$1,208/month
+**Founder Investment:** $7,500 initial + $3-4K top-ups = **~$11K total**  
+**Ending Position Year 1:** -$7,798 (cumulative loss)  
+**Average Burn Rate:** ~$1,358/month (includes team hiring from Month 4)
 
 ---
 
@@ -867,18 +867,18 @@ graph LR
 | **Gross Margin**       | N/A          | -139%        | 97%          | 65%          | **92%**      |
 |                        |              |              |              |              |              |
 | **Operating Expenses** |              |              |              |              |              |
-| Development            | $1,500       | $3,600       | $6,000       | $6,000       | $17,100      |
-| Marketing & Growth     | $0           | $200         | $2,000       | $2,000       | $4,200       |
-| Operations             | $300         | $600         | $1,500       | $1,500       | $3,900       |
-| **Total OpEx**         | $1,800       | $4,400       | $9,500       | $9,500       | **$25,200**  |
+| Development Team       | $500         | $2,400       | $6,000       | $7,000       | $15,900      |
+| Marketing & Growth     | $0           | $200         | $2,500       | $3,000       | $5,700       |
+| Operations             | $300         | $500         | $1,200       | $1,500       | $3,500       |
+| **Total OpEx**         | $800         | $3,100       | $9,700       | $11,500      | **$25,100**  |
 |                        |              |              |              |              |              |
-| **EBITDA**             | -$2,000      | -$4,608      | $10,570      | -$8,060      | **-$4,098**  |
-| **EBITDA Margin**      | N/A          | -3072%       | 51%          | -366%        | **-18%**     |
-| **Cash Position**      | $5,500       | $992         | $12,062      | $4,002       | $4,002       |
+| **EBITDA**             | -$1,000      | -$3,308      | $10,370      | -$10,060     | **-$3,998**  |
+| **EBITDA Margin**      | N/A          | -2205%       | 50%          | -457%        | **-17%**     |
+| **Cash Position**      | $6,500       | $3,192       | $13,562      | $3,502       | $3,502       |
 
 **Total Investment:** $7,500 founder + $20,000 grants = **$27,500**  
-**Ending Cash Year 1:** $4,002 (15% remaining)  
-**Average Burn:** ~$1,957/month (higher due to accelerated growth)
+**Ending Cash Year 1:** $3,502 (13% remaining)  
+**Average Burn:** ~$2,000/month (accelerated hiring with grant funding)
 
 ---
 
@@ -898,14 +898,14 @@ graph LR
 | **Gross Margin**       | 90%     | 90%     | 90%     | 90%     | **90%**      |
 |                        |         |         |         |         |              |
 | **Operating Expenses** |         |         |         |         |              |
-| Development Team       | $6,000  | $6,000  | $7,500  | $7,500  | $27,000      |
-| Support & Ops          | $2,500  | $2,500  | $3,000  | $3,000  | $11,000      |
+| Development Team       | $8,000  | $8,500  | $9,000  | $9,500  | $35,000      |
+| Support & Ops          | $1,500  | $1,500  | $2,000  | $2,000  | $7,000       |
 | Marketing              | $1,500  | $2,000  | $2,500  | $3,000  | $9,000       |
-| G&A                    | $1,000  | $1,000  | $1,500  | $1,500  | $5,000       |
-| **Total OpEx**         | $11,000 | $11,500 | $14,500 | $15,000 | **$52,000**  |
+| G&A                    | $800    | $800    | $1,000  | $1,000  | $3,600       |
+| **Total OpEx**         | $11,800 | $12,800 | $14,500 | $15,500 | **$54,600**  |
 |                        |         |         |         |         |              |
-| **EBITDA**             | -$1,460 | -$3,400 | -$2,260 | $3,360  | **-$3,760**  |
-| **EBITDA Margin**      | -14%    | -38%    | -17%    | 16%     | **-7%**      |
+| **EBITDA**             | -$2,260 | -$4,700 | -$2,260 | $2,860  | **-$6,360**  |
+| **EBITDA Margin**      | -21%    | -52%    | -17%    | 14%     | **-12%**     |
 
 **Year 2 Status:** Approaching break-even by Q4
 
@@ -1282,40 +1282,65 @@ graph TB
 
 ### 10.1 Current Team
 
-**Founder(s):**
+**Founder:**
 
-- [Name], CEO/CTO
-  - Background: [Experience in HR tech, AI, or relevant field]
-  - Skills: Full-stack development, product management
-  - Commitment: Full-time
+- Mohammad Khoulani
+  - Background: Full-stack developer with expertise in modern web and mobile technologies technologies
+  - Skills: Full-stack development, product management, AI integration, system architecture
+  - Experience: Building scalable SaaS platforms with focus on AI-powered solutions
+  - Commitment: Part-time
+  - Contact: mhmmdkholani@gmail.com | +961-78920212
 
-**Advisors:**
+### 10.2 Hiring Plan (Syrian Market - Realistic Salaries)
 
-- [Name], Advisor
-  - Background: [Nonprofit executive, HR tech founder, etc.]
-  - Contribution: Market insights, partnership introductions
+**Core Team (4 People - Post-MVP Launch):**
 
-### 10.2 Hiring Plan (18 months with funding)
+| Role                    | Timing    | Monthly Salary | Annual Cost  | Justification                                |
+| ----------------------- | --------- | -------------- | ------------ | -------------------------------------------- |
+| **Full-Stack Engineer** | Month 3-4 | $1,200-1,500   | $14.4K-18K   | Backend/frontend development, API work       |
+| **Mobile Engineer**     | Month 4-6 | $1,000-1,200   | $12K-14.4K   | React Native or Flutter mobile app           |
+| **UI/UX Designer**      | Month 3   | $900-1,200     | $10.8K-14.4K | Product design, user experience (contractor) |
+| **Marketing/Growth**    | Month 6-9 | $800-1,000     | $9.6K-12K    | Social media, partnerships, content          |
 
-**Year 1:**
+**Total Annual Compensation (Year 1, 4 people):** $46.8K-58.8K
 
-| Role                    | Timing  | Salary            | Justification                  |
-| ----------------------- | ------- | ----------------- | ------------------------------ |
-| **Full-Stack Engineer** | Month 1 | $120K             | Core product development       |
-| **Product Designer**    | Month 3 | $100K (contract)  | UX/UI improvement              |
-| **Growth Marketer**     | Month 6 | $90K + commission | Scale customer acquisition     |
-| **Customer Success**    | Month 9 | $70K              | Support, onboarding, retention |
+**Hiring Strategy:**
 
-**Year 2:**
+- **Month 0-2 (MVP Development):** Founder solo development
+- **Month 3-4 (Post-MVP):** Hire Full-Stack Engineer + UI/UX Designer (contractor, part-time initially)
+- **Month 4-6 (Scaling Features):** Add Mobile Engineer for iOS/Android app
+- **Month 6-9 (User Growth):** Hire Marketing/Growth person for customer acquisition
 
-| Role                | Timing   | Salary             | Justification        |
-| ------------------- | -------- | ------------------ | -------------------- |
-| **Senior Engineer** | Month 13 | $150K              | Scale infrastructure |
-| **Sales Lead**      | Month 15 | $100K + commission | B2B sales            |
-| **Data Scientist**  | Month 18 | $140K              | AI model improvement |
+**Year 1 Hiring Budget (Conservative):**
 
-**Total Compensation (Year 1):** $380K  
-**Total Compensation (Year 2):** $770K
+| Quarter | New Hires             | Quarterly Cost | Notes                        |
+| ------- | --------------------- | -------------- | ---------------------------- |
+| Q1      | None (Founder only)   | $0             | MVP development phase        |
+| Q2      | Full-Stack + Designer | $6,300         | Part-time/contract initially |
+| Q3      | Mobile Engineer       | $9,600         | Full team building           |
+| Q4      | Marketing person      | $11,400        | 3 people + founder           |
+
+**Total Year 1 Hiring Cost:** $27,300 (conservative, part-time/contract mix)
+
+**Year 2 Expansion (If Grants/Revenue Available):**
+
+| Role                 | Timing   | Monthly Salary | Annual Cost | Justification             |
+| -------------------- | -------- | -------------- | ----------- | ------------------------- |
+| **Customer Support** | Month 13 | $600-800       | $7.2K-9.6K  | User onboarding, support  |
+| **Content Creator**  | Month 15 | $700-900       | $8.4K-10.8K | Arabic/English content    |
+| **Data Analyst**     | Month 18 | $1,000-1,500   | $12K-18K    | Analytics, AI improvement |
+
+**Total Year 2 Additional Cost:** $27.6K-38.4K
+
+**Key Hiring Notes (Syrian Market Reality):**
+
+- Salaries reflect Syrian market rates ($600-2,000/month vs. $5K-12K in US/EU)
+- Mix of full-time and contract/part-time roles to manage cash flow
+- Remote work enables hiring from Lebanon, Jordan if needed (similar salary ranges)
+- Prioritize hiring AFTER achieving initial revenue traction (Month 3-4+)
+- All positions assume Syrian/regional talent (Arabic/English bilingual)
+- Founder equity/profit-sharing can supplement lower salaries
+- Start with part-time/contract, transition to full-time as revenue grows
 
 ---
 
@@ -1596,24 +1621,29 @@ graph TB
     style MARKET fill:#D7BDE2
 ```
 
-**Detailed Breakdown (Conservative $50K Budget):**
+**Detailed Breakdown (Conservative $50K Budget - 12 Months):**
 
 | Category                         | Amount      | %        | Details (Syrian Context)                   |
 | -------------------------------- | ----------- | -------- | ------------------------------------------ |
-| **Product Development**          | **$25,000** | 50%      |                                            |
-| - Core Development (Founder + 1) | $18,000     | 36%      | 6-8 weeks MVP build + ongoing improvements |
-| - Infrastructure (Hosting, APIs) | $4,000      | 8%       | Hetzner VPS, OpenRouter AI, Resend email   |
-| - Design & Tools                 | $3,000      | 6%       | UI/UX freelancer, SaaS tools, domain       |
+| **Product Development**          | **$22,000** | 44%      |                                            |
+| - MVP Development (Founder)      | $5,000      | 10%      | Founder part-time, tools, initial setup    |
+| - Full-Stack Engineer (9 months) | $12,000     | 24%      | $1,200-1,500/month, hired Month 4          |
+| - Mobile Engineer (6 months)     | $6,000      | 12%      | $1,000-1,200/month, hired Month 7          |
+| - Infrastructure & Tools         | $3,000      | 6%       | Hetzner VPS, OpenRouter AI, domain, tools  |
 |                                  |             |          |                                            |
-| **Operations & Salaries**        | **$12,500** | 25%      |                                            |
-| - Part-time Customer Support     | $7,500      | 15%      | Syrian hire for user support (affordable)  |
-| - Operations (legal, accounting) | $3,000      | 6%       | Syrian legal setup, basic accounting       |
-| - Miscellaneous                  | $2,000      | 4%       | Unexpected operational needs               |
+| **Design & UX**                  | **$8,000**  | 16%      |                                            |
+| - UI/UX Designer (9 months)      | $8,000      | 16%      | $900-1,200/month contract, hired Month 4   |
 |                                  |             |          |                                            |
-| **Marketing & Growth**           | **$7,500**  | 15%      |                                            |
-| - Social Media Advertising       | $4,000      | 8%       | Facebook, Instagram ads (Syrian targeting) |
-| - Partnership Development        | $2,000      | 4%       | NGO/company outreach, events               |
-| - Content Creation               | $1,500      | 3%       | Blog posts, video content (Arabic/English) |
+| **Marketing & Growth**           | **$10,000** | 20%      |                                            |
+| - Marketing Person (6 months)    | $5,000      | 10%      | $800-1,000/month, hired Month 7            |
+| - Social Media Advertising       | $3,000      | 6%       | Facebook, Instagram ads (Syrian targeting) |
+| - Partnership Development        | $1,500      | 3%       | NGO/company outreach, events               |
+| - Content Creation               | $500        | 1%       | Blog posts, video content (Arabic/English) |
+|                                  |             |          |                                            |
+| **Operations**                   | **$5,000**  | 10%      |                                            |
+| - Legal & Accounting             | $2,500      | 5%       | Syrian business registration, compliance   |
+| - Payment Processing & Fees      | $1,500      | 3%       | Stripe/PayPal fees, banking                |
+| - Miscellaneous                  | $1,000      | 2%       | Unexpected operational needs               |
 |                                  |             |          |                                            |
 | **Contingency & Buffer**         | **$5,000**  | 10%      |                                            |
 | - Emergency fund                 | $5,000      | 10%      | Currency fluctuations, unexpected costs    |
@@ -1622,11 +1652,15 @@ graph TB
 
 **Key Cost Assumptions:**
 
-- Development largely in-house by founder (sweat equity)
-- Syrian labor rates: **$200-500/month** (vs. $5K+ in US/EU)
-- Infrastructure: **$50-100/month** (Hetzner, not AWS)
-- Marketing: Organic + low-cost social media (Syrian audience)
-- **Total monthly burn: $3,500-4,500** → Break-even by Month 12
+- Founder working part-time on MVP development (sweat equity, minimal cash)
+- Syrian labor rates: **$800-2,000/month** (vs. $5K-12K in US/EU)
+- Infrastructure: **$100-200/month** (Hetzner VPS, not AWS)
+- Team hired gradually post-MVP (Month 3-4 onward)
+- Mix of part-time and full-time contracts initially
+- **Average monthly burn:**
+  - Months 1-3: $800-1,200 (founder + infrastructure only)
+  - Months 4-6: $2,500-3,500 (+ engineer + designer)
+  - Months 7-12: $4,000-5,000 (full team of 4)
 
 ---
 
@@ -1795,7 +1829,10 @@ graph TB
 
 **This is a compelling opportunity for impact investors, grant funders, and regional development organizations to support Syria's digital economic transformation.**
 
-**Contact for Funding Inquiries:** [Insert Contact Information]
+**Contact for Funding Inquiries:**  
+Mohammad Khoulani  
+Email: mhmmdkholani@gmail.com  
+Phone: +961-78920212
 
 ---
 
@@ -1858,13 +1895,13 @@ graph TB
 **Project:** AI Job Portal for Syrian Market  
 **Target Market:** Syria + Syrian Diaspora (6M globally)  
 **Funding Seek:** $40,000-$60,000 USD  
-**Contact:** [Insert Founder Contact Information]
+**Contact:** Mohammad Khoulani
 
 **For Funding & Partnership Inquiries:**  
-**Email:** [founder@yourdomain.com]  
-**Phone:** [+XXX-XXX-XXX]  
-**LinkedIn:** [linkedin.com/in/yourprofile]  
-**Location:** [Syria / Remote]
+**Email:** mhmmdkholani@gmail.com  
+**Phone:** +961-78920212  
+**LinkedIn:** [linkedin.com/in/mohammad-khoulani](https://www.linkedin.com/in/mohammad-khoulani-610aa614b/)  
+**Location:** Lebanon / Remote
 
 **Grant Funding Inquiries Welcome:**  
 We are actively seeking grant funding from international development organizations (UNDP, ILO, World Bank, EU, US State Department) and regional impact investors.
