@@ -1,15 +1,15 @@
-# AI Job Portal: Fast-Track MVP Execution Plan
+# AI Job Portal: Solo Developer MVP Execution Plan
 
 ## Executive Summary
 
-**Mission:** Launch a functional AI job portal MVP in 6 weeks with Google Ads monetization to validate market demand, generate early revenue to offset costs, and build traction for seed funding.
+**Mission:** Launch a functional AI job portal MVP in **3 months** as a solo developer. The goal is to validate market demand with a lean, scalable product, generate early ad revenue to offset costs, and build traction for a future seed funding round.
 
 **Key Strategy Shift:**
 
-- ✅ Google Ads integration from Week 1 (not Month 4)
-- ✅ Focus on fastest path to market with scalable architecture
-- ✅ Build "funding-ready" metrics from day one
-- ✅ Lean MVP: Only features that directly drive user engagement and ad revenue
+- ✅ Google Ads integration from Day 1 of launch.
+- ✅ Focus on the fastest, simplest path to a high-quality MVP.
+- ✅ Build "funding-ready" metrics from the moment of launch.
+- ✅ Lean MVP: Only features that directly drive user engagement and ad revenue.
 
 ---
 
@@ -17,12 +17,12 @@
 
 | Metric                          | Target                                  |
 | ------------------------------- | --------------------------------------- |
-| **Timeline to Launch**          | 6 weeks                                 |
-| **Initial Development Budget**  | $8,000-12,000                           |
-| **Runway with Ads Revenue**     | 3-4 months self-sustaining              |
+| **Timeline to Launch**          | **12 weeks (3 months)**                 |
+| **Initial Development Budget**  | $1,000-3,000 (for a solo developer)     |
+| **Runway with Ads Revenue**     | 3-4 months self-sustaining post-launch  |
 | **MVP Launch Target**           | 25 NGOs, 250 job seekers, 100 job posts |
 | **Ad Revenue Target (Month 2)** | $200-300/month (covers 50% of hosting)  |
-| **Funding Readiness**           | Month 3 (with traction metrics)         |
+| **Funding Readiness**           | **Month 6** (with 3 months of traction) |
 
 ---
 
@@ -38,6 +38,9 @@
 8. [Funding Preparation](#funding-preparation)
 
 ---
+
+
+
 
 ## Strategic Approach
 
@@ -148,11 +151,12 @@ Note: Apply IMMEDIATELY. Start approval process in parallel with development.
 **Other Services:**
 
 ```bash
-# OpenRouter (AI features)
+# OpenRouter (AI embeddings for semantic matching)
 ✅ Sign up: https://openrouter.ai
-✅ Add $10 credit
+✅ Add $20 credit (for initial embeddings)
 ✅ Get API key
-✅ Cost: ~$0.02/resume parse, $0.01/job match
+✅ Use multilingual model (e.g., mBERT or LaBSE) for English/Arabic vectors
+✅ Cost: ~$0.01 per embedding (profile/job indexing)
 
 # Email Service (Resend - generous free tier)
 ✅ Sign up: https://resend.com
@@ -316,45 +320,55 @@ CREATE TABLE users (
 
 -- profiles table (polymorphic)
 CREATE TABLE profiles (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  first_name VARCHAR(100),
-  last_name VARCHAR(100),
-  phone VARCHAR(20),
-  location VARCHAR(255),
-  bio TEXT,
-  avatar_url TEXT,
-  -- Job seeker specific
-  resume_url TEXT,
-  skills TEXT[], -- Array of skills
-  experience_years INTEGER,
-  -- Employer specific
-  company_name VARCHAR(255),
-  company_logo_url TEXT,
-  company_description TEXT,
-  company_website VARCHAR(255),
-  is_ngo BOOLEAN DEFAULT FALSE,
-  ngo_verified BOOLEAN DEFAULT FALSE,
-  created_at TIMESTAMP DEFAULT NOW(),
-  updated_at TIMESTAMP DEFAULT NOW()
+   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+   user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+   first_name VARCHAR(100),
+   last_name VARCHAR(100),
+   phone VARCHAR(20),
+   location VARCHAR(255),
+   bio TEXT,
+   bio_multilang JSONB, -- {"en": "bio text", "ar": "نص السيرة الذاتية"}
+   avatar_url TEXT,
+   -- Job seeker specific
+   resume_url TEXT,
+   skills TEXT[], -- Array of skills
+   experience_years INTEGER,
+   -- AI embeddings for semantic matching
+   embedding_en vector(1536),
+   embedding_ar vector(1536),
+   -- Employer specific
+   company_name VARCHAR(255),
+   company_logo_url TEXT,
+   company_description TEXT,
+   company_description_multilang JSONB,
+   company_website VARCHAR(255),
+   is_ngo BOOLEAN DEFAULT FALSE,
+   ngo_verified BOOLEAN DEFAULT FALSE,
+   created_at TIMESTAMP DEFAULT NOW(),
+   updated_at TIMESTAMP DEFAULT NOW()
 );
 
 -- jobs table
 CREATE TABLE jobs (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  employer_id UUID REFERENCES users(id) ON DELETE CASCADE,
-  title VARCHAR(255) NOT NULL,
-  description TEXT NOT NULL,
-  location VARCHAR(255),
-  job_type VARCHAR(50), -- full-time, part-time, contract, remote
-  salary_min INTEGER,
-  salary_max INTEGER,
-  required_skills TEXT[],
-  status VARCHAR(20) DEFAULT 'draft' CHECK (status IN ('draft', 'published', 'expired', 'closed')),
-  views INTEGER DEFAULT 0,
-  expires_at TIMESTAMP,
-  created_at TIMESTAMP DEFAULT NOW(),
-  updated_at TIMESTAMP DEFAULT NOW()
+   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+   employer_id UUID REFERENCES users(id) ON DELETE CASCADE,
+   title VARCHAR(255) NOT NULL,
+   title_multilang JSONB, -- {"en": "title", "ar": "العنوان"}
+   description TEXT NOT NULL,
+   description_multilang JSONB,
+   location VARCHAR(255),
+   job_type VARCHAR(50), -- full-time, part-time, contract, remote
+   salary_min INTEGER,
+   salary_max INTEGER,
+   required_skills TEXT[],
+   status VARCHAR(20) DEFAULT 'draft' CHECK (status IN ('draft', 'published', 'expired', 'closed')),
+   views INTEGER DEFAULT 0,
+   expires_at TIMESTAMP,
+   -- AI embeddings for semantic matching
+   embedding_en vector(1536),
+   embedding_ar vector(1536),
+   created_at TIMESTAMP DEFAULT NOW(),
+   updated_at TIMESTAMP DEFAULT NOW()
 );
 
 -- applications table
@@ -788,82 +802,113 @@ export class ApplicationsService {
 
 ## Week 3-4: Core Features
 
-### Week 3: Days 15-18 - Basic AI Matching
+### Week 3: Days 15-18 - AI Semantic Matching with Vectors
 
-**Simple Keyword Matching (No OpenRouter Yet):**
+**Vector Embeddings for Multilingual Matching:**
+
+- Use pgvector extension in PostgreSQL for storing and querying vectors.
+- Generate separate vectors for English and Arabic content during indexing.
+- Support multilingual queries by detecting language and using appropriate vectors.
+
+**Updated Schema for Vectors and Multilingual:**
+
+```sql
+-- Add vector columns for embeddings
+ALTER TABLE profiles ADD COLUMN embedding_en vector(1536);
+ALTER TABLE profiles ADD COLUMN embedding_ar vector(1536);
+ALTER TABLE jobs ADD COLUMN embedding_en vector(1536);
+ALTER TABLE jobs ADD COLUMN embedding_ar vector(1536);
+
+-- Multilingual JSONB fields
+ALTER TABLE profiles ADD COLUMN bio_multilang JSONB; -- {"en": "text", "ar": "نص"}
+ALTER TABLE jobs ADD COLUMN description_multilang JSONB;
+ALTER TABLE jobs ADD COLUMN title_multilang JSONB;
+```
+
+**AI Matching Service:**
 
 ```typescript
 // src/ai/matching.service.ts
 @Injectable()
 export class MatchingService {
-  calculateMatchScore(job: Job, candidate: Profile): number {
-    const jobSkills = new Set(job.required_skills.map((s) => s.toLowerCase()));
-    const candidateSkills = new Set(
-      candidate.skills.map((s) => s.toLowerCase())
-    );
+  constructor(
+    private openRouterService: OpenRouterService,
+    @InjectRepository(Profile) private profilesRepo: Repository<Profile>,
+    @InjectRepository(Job) private jobsRepo: Repository<Job>
+  ) {}
 
-    // Calculate overlap
-    const intersection = new Set(
-      [...jobSkills].filter((x) => candidateSkills.has(x))
-    );
-    const overlap = intersection.size / jobSkills.size;
+  async generateEmbeddings(text: string, language: 'en' | 'ar'): Promise<number[]> {
+    // Use OpenRouter with multilingual model (e.g., mBERT or LaBSE)
+    const embedding = await this.openRouterService.generateEmbedding(text, language);
+    return embedding;
+  }
 
-    // Experience match
-    let experienceScore = 1.0;
-    if (job.experience_required && candidate.experience_years) {
-      const diff = Math.abs(
-        job.experience_required - candidate.experience_years
-      );
-      experienceScore = Math.max(0, 1 - diff / 10);
-    }
+  async indexProfile(profileId: string) {
+    const profile = await this.profilesRepo.findOne({ where: { id: profileId } });
 
-    // Location match (bonus)
-    let locationBonus = 0;
-    if (job.location && candidate.location) {
-      if (
-        job.location.toLowerCase().includes(candidate.location.toLowerCase()) ||
-        candidate.location.toLowerCase().includes(job.location.toLowerCase())
-      ) {
-        locationBonus = 0.1;
-      }
-    }
+    // Consolidate text for each language
+    const textEn = `${profile.first_name} ${profile.last_name} ${profile.bio_multilang?.en || ''} ${profile.skills?.join(' ')}`;
+    const textAr = `${profile.first_name} ${profile.last_name} ${profile.bio_multilang?.ar || ''} ${profile.skills?.join(' ')}`;
 
-    // Weighted score
-    const finalScore = overlap * 0.6 + experienceScore * 0.3 + locationBonus;
-    return Math.round(finalScore * 100); // 0-100 scale
+    // Generate and store vectors
+    const [embeddingEn, embeddingAr] = await Promise.all([
+      this.generateEmbeddings(textEn, 'en'),
+      this.generateEmbeddings(textAr, 'ar')
+    ]);
+
+    await this.profilesRepo.update(profileId, {
+      embedding_en: embeddingEn,
+      embedding_ar: embeddingAr
+    });
+  }
+
+  async searchCandidates(query: string, language: 'en' | 'ar') {
+    const queryEmbedding = await this.generateEmbeddings(query, language);
+
+    const vectorField = language === 'en' ? 'embedding_en' : 'embedding_ar';
+
+    const candidates = await this.profilesRepo
+      .createQueryBuilder('profile')
+      .select(['profile.id', 'profile.first_name', 'profile.last_name'])
+      .addSelect(`${vectorField} <=> '${JSON.stringify(queryEmbedding)}'`, 'distance')
+      .where(`${vectorField} IS NOT NULL`)
+      .orderBy('distance', 'ASC')
+      .limit(20)
+      .getRawMany();
+
+    return candidates;
   }
 
   async getRecommendations(userId: string) {
     const profile = await this.profilesRepo.findOne({
       where: { user_id: userId },
     });
-    if (!profile.skills?.length) return [];
 
-    const jobs = await this.jobsRepo.find({
-      where: { status: "published" },
-      order: { created_at: "DESC" },
-      take: 50,
-    });
+    // Use English vector for initial recommendations (can expand to multilingual)
+    const jobs = await this.jobsRepo
+      .createQueryBuilder('job')
+      .select(['job.*'])
+      .addSelect(`job.embedding_en <=> '${JSON.stringify(profile.embedding_en)}'`, 'distance')
+      .where('job.status = :status', { status: 'published' })
+      .andWhere('job.embedding_en IS NOT NULL')
+      .orderBy('distance', 'ASC')
+      .limit(10)
+      .getRawMany();
 
-    const scored = jobs
-      .map((job) => ({
-        job,
-        score: this.calculateMatchScore(job, profile),
-      }))
-      .filter((item) => item.score > 30) // Only show 30%+ match
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 10);
-
-    return scored;
+    return jobs.map(job => ({
+      ...job,
+      matchScore: Math.round((1 - job.distance) * 100) // Convert distance to percentage
+    }));
   }
 }
 ```
 
 **Deliverable (Day 18):**
 
-- ✅ Basic match scoring working
-- ✅ Job recommendations on dashboard
-- ✅ Match percentage shown on job cards
+- ✅ Vector embeddings generated for profiles and jobs in both languages
+- ✅ Semantic matching using cosine similarity
+- ✅ Job recommendations based on vector proximity
+- ✅ Multilingual content storage in JSONB
 
 ---
 
@@ -1462,7 +1507,7 @@ For Job Seekers:
 **Goals:**
 
 - ✅ 5,000 total users
-- ✅ 500 active jobs
+- ✅ 500 active job posts
 - ✅ $300-500 ad revenue
 - ✅ Prepare pitch deck
 - ✅ Apply to accelerators
@@ -1586,9 +1631,9 @@ Backend:
 ✅ JWT authentication
 
 Databases:
-✅ PostgreSQL 15 (primary)
+✅ PostgreSQL 15 (primary with pgvector for AI embeddings)
 ✅ Redis 7 (cache)
-✅ MongoDB (defer to Phase 2 - not needed for MVP)
+✅ JSONB in PostgreSQL for flexible multilingual data
 
 Infrastructure:
 ✅ Docker + Docker Compose
@@ -1616,7 +1661,7 @@ graph TB
 
     NEXT --> NEST
 
-    NEST --> PG[(PostgreSQL<br/>Users, Jobs, Apps)]
+    NEST --> PG[(PostgreSQL + pgvector<br/>Users, Jobs, Apps, Vectors)]
     NEST --> REDIS[(Redis<br/>Cache + Sessions)]
     NEST --> S3[DigitalOcean Spaces<br/>Resumes]
     NEST --> EMAIL[Resend<br/>Emails]
@@ -1634,6 +1679,8 @@ graph TB
 - ✅ Simple to deploy
 - ✅ Easy to debug
 - ✅ Low operational overhead
+- ✅ pgvector enables efficient AI semantic matching
+- ✅ JSONB supports flexible multilingual data
 - ✅ Scales to 10,000 users easily
 - ✅ Can refactor to microservices later
 
@@ -1653,10 +1700,9 @@ graph TB
 | **Monitoring**     | Sentry           | $0         | 5k events/month free      |
 | **Analytics**      | Google Analytics | $0         | Free                      |
 | **Uptime Monitor** | UptimeRobot      | $0         | 50 monitors free          |
-| **AI (Future)**    | OpenRouter       | $20        | ~1,000 operations         |
+| **AI Embeddings** | OpenRouter       | $20        | Initial setup + ongoing   |
 | **Backup**         | Hetzner          | $3         | 100GB backup space        |
-| **Total**          |                  | **$36/mo** | Without AI                |
-| **With AI**        |                  | **$56/mo** | Phase 2                   |
+| **Total**          |                  | **$56/mo** | With AI from MVP          |
 
 ### Revenue Projections (Conservative)
 
@@ -1998,69 +2044,3 @@ Quality Metrics:
 - Mitigation: Apply early, have quality content
 - Backup: Try other ad networks (Media.net, Ezoic)
 - Timeline: 7-14 days approval
-
-**Risk: Slow user growth**
-
-- Mitigation: Focus on one channel (NGO partnerships)
-- Pivot: Offer to larger market if NGO-only doesn't work
-- Metric: If <100 users by Month 2, pivot
-
-**Risk: High hosting costs**
-
-- Mitigation: Start small (4GB RAM), scale as needed
-- Optimize: Aggressive caching, image optimization
-- Fallback: Vercel (frontend) + Railway (backend) if needed
-
-**Risk: AI costs too high**
-
-- Mitigation: Use simple keyword matching for MVP
-- Defer: OpenRouter integration to Phase 2
-- Budget: Cap AI spending at $50/month initially
-
-### Business Risks
-
-**Risk: Can't get funding**
-
-- Mitigation: Stay lean, extend runway with ad revenue
-- Alternative: Bootstrap longer, prove model works
-- Fallback: Apply to accelerators for non-dilutive grants
-
-**Risk: Competitive pressure**
-
-- Mitigation: Focus on niche (nonprofits), move fast
-- Moat: Community, data, AI features
-- Timing: Launch before competitors notice
-
----
-
-## Conclusion
-
-This execution plan prioritizes **speed to market** while maintaining **scalability** and positioning for **funding**. By integrating Google Ads from Day 1, you'll have early revenue to extend runway and prove monetization to investors.
-
-**Key Differences from Original Plan:**
-
-- ✅ 6 weeks to launch (vs. 8 weeks)
-- ✅ Google Ads from launch (vs. Month 4)
-- ✅ Simplified MVP (defer advanced AI)
-- ✅ Focus on funding-ready metrics
-- ✅ Break-even by Month 3
-
-**Next Actions:**
-
-1. Secure initial capital ($1K-12K depending on approach)
-2. Apply for Google AdSense TODAY
-3. Provision infrastructure
-4. Start coding!
-
-**Remember:** Done is better than perfect. Launch fast, iterate based on real user feedback, and let the market guide your product development.
-
-**Good luck! 🚀**
-
----
-
-**Document Version:** 1.0  
-**Last Updated:** November 3, 2025  
-**Related Documents:**
-
-- [Technical Implementation Plan](initial-tech-plan.md)
-- [Business Strategy Plan](SaaS Job Portal MVP Plan.md)

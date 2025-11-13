@@ -7,8 +7,8 @@ This document provides a comprehensive technical blueprint for building an AI-po
 **Key Technology Decisions:**
 
 - **Frontend:** Next.js 14+ with TypeScript
-- **Backend:** NestJS with microservices architecture
-- **Databases:** PostgreSQL (transactional), MongoDB (AI/ML data), Redis (caching)
+- **Backend:** NestJS monolith (microservices-ready)
+- **Databases:** PostgreSQL (with pgvector for AI embeddings), Redis (caching)
 - **Deployment:** Docker containers on VPS
 - **AI Integration:** OpenRouter API for AI capabilities
 
@@ -19,7 +19,7 @@ This document provides a comprehensive technical blueprint for building an AI-po
 1. [Core Language and Framework Synergy](#1-core-language-and-framework-synergy)
 2. [Frontend: Next.js (Presentation and Performance Layer)](#2-frontend-nextjs-presentation-and-performance-layer)
 3. [Backend: NestJS (Microservices and Core Logic)](#3-backend-nestjs-microservices-and-core-logic)
-4. [Data Strategy: Polyglot Persistence](#4-data-strategy-polyglot-persistence-postgresql--mongodb)
+4. [Data Strategy: PostgreSQL with Extensions](#4-data-strategy-postgresql-with-extensions)
 5. [System Architecture](#5-system-architecture)
 6. [NestJS Module Structure](#6-nestjs-module-structure)
 7. [Data Flow Architecture](#7-data-flow-architecture)
@@ -103,14 +103,13 @@ NestJS is selected to provide a robust, scalable structure for the complex busin
 
 ---
 
-## 4. Data Strategy: Polyglot Persistence (PostgreSQL & MongoDB)
+## 4. Data Strategy: PostgreSQL with Extensions
 
-The strategic use of both PostgreSQL (Relational) and MongoDB (Document) implements **polyglot persistence**, which matches specific database technologies to varying data characteristics and access patterns to optimize performance and scalability.
+PostgreSQL serves as the primary database with extensions for specialized needs, providing ACID compliance, relational integrity, and advanced features for AI workloads.
 
 | Database       | Primary Role                        | Justification and Key Use Cases                                                                                                                                                                                                                                                                                                                                                                              |
 | -------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **PostgreSQL** | Transactional Data Integrity (ACID) | **Data Integrity:** Fully ACID-compliant, non-negotiable for highly sensitive and financial data. **Transactional Workflows:** Stores critical data like user authentication records, billing history, and core job posting status. **Reporting:** Superior for complex handling of relationships and joins, necessary for generating management reports (e.g., connecting user history to billing records). |
-| **MongoDB**    | High-Velocity, Unstructured Data    | **Flexibility and Speed:** Provides a flexible schema, ideal for rapid iteration on machine learning features where data structures may change frequently. **AI Data Storage:** Used for storing complex, unstructured data such as raw candidate resumes, detailed candidate profiles, and the vectors or graph-like data structures necessary for personalized content and recommendations.                |
+| **PostgreSQL** | Transactional Data Integrity (ACID) | **Data Integrity:** Fully ACID-compliant for all data. **Transactional Workflows:** Stores user authentication, job postings, applications, billing. **AI Features:** Uses pgvector for vector embeddings, JSONB for flexible multilingual data. **Reporting:** Superior for complex relationships and joins. |
 | **Redis**      | Caching and Session Management      | **High-Speed Access:** In-memory data store for session tokens, API response caching, rate limiting counters. **Real-Time Features:** Pub/Sub for real-time notifications and WebSocket message broadcasting.                                                                                                                                                                                                |
 
 ### Database Connection Strategy
@@ -121,13 +120,8 @@ The strategic use of both PostgreSQL (Relational) and MongoDB (Document) impleme
 - Migration management for schema changes
 - Repository pattern for clean data access
 - Transaction support for complex operations
-
-**MongoDB (Mongoose):**
-
-- Schema definitions with validation
-- Middleware for pre/post hooks
-- Population for document relationships
-- Index management for query optimization
+- pgvector extension for AI embeddings
+- JSONB for flexible data structures
 
 **Redis:**
 
@@ -171,8 +165,7 @@ graph TB
     end
 
     subgraph "Data Layer - VPS"
-        PG[(PostgreSQL<br/>Port 5432)]
-        MONGO[(MongoDB<br/>Port 27017)]
+        PG[(PostgreSQL + pgvector<br/>Port 5432)]
         REDIS[(Redis<br/>Port 6379)]
     end
 
@@ -202,13 +195,11 @@ graph TB
     AUTH --> REDIS
 
     JOBS --> PG
-    JOBS --> MONGO
     JOBS --> REDIS
 
     APPS --> PG
-    APPS --> MONGO
 
-    AI --> MONGO
+    AI --> PG
     AI --> OPENROUTER
     AI --> REDIS
 
@@ -248,8 +239,7 @@ graph TB
 
 **4. Data Layer (VPS)**
 
-- **PostgreSQL:** User accounts, job postings, applications, billing
-- **MongoDB:** AI vectors, parsed resumes, analytics data
+- **PostgreSQL:** All data including user accounts, job postings, applications, billing, AI vectors, parsed resumes
 - **Redis:** Session storage, caching, real-time pub/sub
 
 **5. External Services**
@@ -340,7 +330,7 @@ graph LR
 - EmployerProfile (company-specific data)
 - Skills, Experience, Education
 
-**Database:** PostgreSQL (structured profile data), MongoDB (parsed resume data)
+**Database:** PostgreSQL (structured profile data, parsed resume data via JSONB)
 
 ---
 
@@ -362,7 +352,7 @@ graph LR
 - Remote/hybrid/onsite filtering
 - Multi-language support
 
-**Database:** PostgreSQL (job posts), Redis (search result caching)
+**Database:** PostgreSQL (job posts, AI embeddings), Redis (search result caching)
 
 ---
 
@@ -410,7 +400,7 @@ graph LR
 - Vector embeddings for semantic search
 - Keyword extraction using NLP libraries
 
-**Database:** MongoDB (vectors, parsed data), Redis (computation caching)
+**Database:** PostgreSQL (vectors, parsed data), Redis (computation caching)
 
 ---
 
@@ -481,7 +471,7 @@ graph LR
 - User engagement metrics
 - Revenue metrics (MRR, ARPU, churn)
 
-**Database:** MongoDB (event logs), PostgreSQL (aggregated metrics)
+**Database:** PostgreSQL (event logs, aggregated metrics)
 
 ---
 
@@ -593,7 +583,7 @@ sequenceDiagram
 3. Insert application record (PostgreSQL)
 4. Store resume file (S3)
 5. Trigger AI parsing job (async)
-6. Store parsed data (MongoDB)
+6. Store parsed data (PostgreSQL JSONB)
 7. Commit transaction
 8. Invalidate relevant caches
 9. Trigger notification
@@ -604,7 +594,7 @@ sequenceDiagram
 2. Extract text content
 3. Send to OpenRouter API
 4. Process response
-5. Store structured data in MongoDB
+5. Store structured data in PostgreSQL JSONB
 6. Generate vector embeddings
 7. Store vectors for similarity search
 8. Return parsed data
@@ -975,13 +965,11 @@ services:
     environment:
       - NODE_ENV=production
       - DATABASE_URL=${POSTGRES_URL}
-      - MONGODB_URL=${MONGODB_URL}
       - REDIS_URL=redis://redis:6379
     expose:
       - "4002"
     depends_on:
       - postgres
-      - mongodb
       - redis
     restart: unless-stopped
     networks:
@@ -994,13 +982,13 @@ services:
       dockerfile: Dockerfile.ai
     environment:
       - NODE_ENV=production
-      - MONGODB_URL=${MONGODB_URL}
+      - DATABASE_URL=${POSTGRES_URL}
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
       - REDIS_URL=redis://redis:6379
     expose:
       - "4004"
     depends_on:
-      - mongodb
+      - postgres
       - redis
     restart: unless-stopped
     networks:
@@ -1022,20 +1010,7 @@ services:
     networks:
       - app-network
 
-  # MongoDB Database
-  mongodb:
-    image: mongo:7
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
-      - MONGO_INITDB_DATABASE=jobportal_ai
-    volumes:
-      - mongodb-data:/data/db
-    ports:
-      - "27017:27017"
-    restart: unless-stopped
-    networks:
-      - app-network
+
 
   # Redis Cache
   redis:
@@ -1051,7 +1026,6 @@ services:
 
 volumes:
   postgres-data:
-  mongodb-data:
   redis-data:
 
 networks:
@@ -1221,12 +1195,7 @@ POSTGRES_PASSWORD=<strong-password>
 POSTGRES_DB=jobportal
 DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
 
-# Database - MongoDB
-MONGO_USER=jobportal_mongo
-MONGO_PASSWORD=<strong-password>
-MONGO_HOST=mongodb
-MONGO_PORT=27017
-MONGODB_URL=mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/jobportal_ai?authSource=admin
+# Enable pgvector extension in PostgreSQL for AI embeddings
 
 # Redis
 REDIS_HOST=redis
@@ -1983,18 +1952,17 @@ location /api/jobs {
    - Use partial indexes for filtered queries
    - Analyze slow queries with EXPLAIN
 
-**MongoDB Scaling:**
+**PostgreSQL AI Scaling:**
 
-1. **Sharding** (for very large datasets)
+1. **pgvector Optimization**
 
-   - Shard by tenantId or userId
-   - Distribute data across multiple servers
+   - Use IVFFlat or HNSW indexes for vector similarity search
+   - Partition large vector tables if needed
 
-2. **Indexes**
-   ```typescript
-   @Index({ location: '2dsphere' }) // Geospatial index
-   @Index({ skills: 1 }) // Skill search
-   @Index({ createdAt: -1 }) // Sorting by date
+2. **JSONB Indexes**
+   ```sql
+   CREATE INDEX idx_profiles_bio_multilang ON profiles USING gin (bio_multilang);
+   CREATE INDEX idx_jobs_title_multilang ON jobs USING gin (title_multilang);
    ```
 
 ---

@@ -7,7 +7,7 @@
 **Prepared By:** Mohammad Khoulani  
 **Email:** mhmmdkholani@gmail.com  
 **Phone:** +961-78920212  
-**Version:** 2.0 (Revised for Investor Readiness)  
+**Version:** 1.0 (Initial Draft for Review)  
 **Date:** November 4, 2025  
 **Target Audience:** Investors, Grant Funders, Strategic Partners (Open to discussions at any stage; primary outreach post-launch)
 
@@ -25,7 +25,7 @@ We are building Syria's first modern, AI-powered job portal to address the criti
 | ------------------------------------------ | --------------- | -------------------------------------------------------------- |
 | **Total Registered Users**                 | 15,000-25,000   | Conservative market penetration (0.5-1% of Syrian job seekers) |
 | **Monthly Active Users (MAU) at Month 12** | 3,000-5,000     | 20% activation rate, sustainable engagement                    |
-| **Gross Revenue Year 1**                   | $8,000-12,000   | Ads ($3K-5K) + Paid Postings ($3K-5K) + Premium ($2K-2K)       |
+| **Gross Revenue Year 1**                   | $8,000-12,000   | Ads ($3K-5K) + Paid Postings ($3K-5K) + Premium ($2K-2.5K)       |
 | **Cost Year 1**                            | $20,000 (fixed) | Ultra-lean operations, founder-led development                 |
 | **Break-Even Timeline**                    | Month 18-24     | Path to sustainability without external funding                |
 
@@ -71,7 +71,7 @@ We are building Syria's first modern, AI-powered job portal to address the criti
 
 | Year       | Target Users    | Market Penetration           | Rationale                                            |
 | ---------- | --------------- | ---------------------------- | ---------------------------------------------------- |
-| **Year 1** | 15,000-25,000   | 0.5-1% of Syrian job seekers | Conservative early adoption; brand building phase    |
+| **Year 1** | 8,000-15,000    | 0.3-0.5% of Syrian job seekers | Conservative early adoption; brand building phase    |
 | **Year 2** | 50,000-80,000   | 2-3% penetration             | Word-of-mouth, proven platform, feature improvements |
 | **Year 3** | 120,000-200,000 | 5-8% penetration             | Market leader position, network effects kicking in   |
 
@@ -171,15 +171,15 @@ Platform will add dedicated features to connect international companies with ski
 
 **Phase 1: MVP (Months 1-3)**
 
-✅ **Bilingual Platform:** Full Arabic and English support  
-✅ **Mobile-First Design:** Optimized for 60% mobile traffic  
-✅ **AI-Powered CV Builder:** Guided CV creation with intelligent suggestions (Arabic & English)  
-✅ **Smart Job Matching:** AI recommendations based on skills, experience, location  
-✅ **Job Aggregation:** Scrape/import jobs from LinkedIn, job.sy, forsa.sy, company websites  
-✅ **One-Click Applications:** Simple apply process with status tracking  
-✅ **Company Profiles:** Basic employer branding pages  
-✅ **Display Ads (Day 1):** Google AdSense integration for immediate monetization  
-✅ **Basic Analytics:** Simple dashboard for employers
+○ **Bilingual Platform:** Full Arabic and English support  
+○ **Mobile-First Design:** Optimized for 60% mobile traffic  
+○ **AI-Powered CV Builder:** Guided CV creation with intelligent suggestions (Arabic & English)  
+○ **Smart Job Matching:** AI recommendations based on skills, experience, location  
+○ **Job Aggregation:** Scrape/import jobs from LinkedIn, job.sy, forsa.sy, company websites  
+○ **One-Click Applications:** Simple apply process with status tracking  
+○ **Company Profiles:** Basic employer branding pages  
+○ **Display Ads (Day 1):** Google AdSense integration for immediate monetization  
+○ **Basic Analytics:** Simple dashboard for employers
 
 **Phase 2: Post-MVP (Months 4-12)**
 
@@ -311,7 +311,7 @@ graph TB
 
     REV --> STREAM1[Stream 1: Display Ads<br/>Active from Day 1<br/>$3K-5K Year 1]
     REV --> STREAM2[Stream 2: Paid Job Postings<br/>Launch Month 6<br/>$3K-5K Year 1]
-    REV --> STREAM3[Stream 3: Premium Features<br/>Launch Month 9<br/>$2K-2K Year 1]
+    REV --> STREAM3[Stream 3: Premium Features<br/>Launch Month 9<br/>$2K-2.5K Year 1]
 
     STREAM1 --> ADS1[Google AdSense]
     STREAM1 --> ADS2[Direct Ad Sales]
@@ -330,79 +330,78 @@ graph TB
     style STREAM3 fill:#ba68c8
 ```
 
-### 5.2 Revenue Stream 1: Display Ads (Day 1, $3,000-5,000 Year 1)
+### 5.2 Revenue Stream 1: Display Ads (Day 1, $1,000-2,000 Year 1)
 
 **Assumption Set:**
 
 - **Ad Network:** Google AdSense (standard for Syrian market)
-- **CPM (Cost Per Mille):** **$0.50-1.50** (Syrian market rate; global average $2-5, but Syria lower due to advertiser demand)
+- **CPM (Cost Per Mille):** **$0.15-0.50** (Syrian market rate; global average $2-5, but Syria is significantly lower due to sanctions and low advertiser demand). Path to growth is via direct ad sales.
 - **Page Views per User per Month:** **5-8 pages** (job searches, applications, CV editing)
 - **Ad Placement:** 2-3 ad units per page (standard AdSense best practice)
 - **Fill Rate:** **70-90%** (Google AdSense typical)
 - **Ad CTR (Click-Through Rate):** **0.5-1%** (industry standard)
 
-**Monthly Calculation (Month 6 example - 1,000 MAU):**
+**Monthly Calculation (Month 6 example - 500 MAU):**
 
-- **MAU:** 1,000
+- **MAU:** 500
 - **Page views/user/month:** 6 (average)
-- **Total monthly page views:** 1,000 × 6 = **6,000**
-- **Ad impressions (2 units/page, 80% fill):** 6,000 × 2 × 0.8 = **9,600**
-- **CPM:** $1 (conservative average)
-- **Monthly ad revenue:** (9,600 / 1,000) × $1 = **$9.60**
+- **Total monthly page views:** 500 × 6 = **3,000**
+- **Ad impressions (2 units/page, 80% fill):** 3,000 × 2 × 0.8 = **4,800**
+- **CPM:** $0.25 (conservative average for mid-year)
+- **Monthly ad revenue:** (4,800 / 1,000) × $0.25 = **$1.20**
 
 **Year 1 Projection (Conservative):**
 
 | Month | MAU   | Page Views | Ad Impressions | CPM   | Monthly Revenue | Cumulative |
 | ----- | ----- | ---------- | -------------- | ----- | --------------- | ---------- |
-| 1     | 200   | 1,200      | 1,920          | $0.80 | $1.54           | $1.54      |
-| 3     | 500   | 3,000      | 4,800          | $0.90 | $4.32           | $10        |
-| 6     | 1,000 | 6,000      | 9,600          | $1.00 | $9.60           | $40        |
-| 9     | 2,000 | 12,000     | 19,200         | $1.20 | $23.04          | $120       |
-| 12    | 3,500 | 21,000     | 33,600         | $1.50 | $50.40          | $250       |
+| 3     | 150   | 900        | 1,440          | $0.15 | $0.22           | $0.22      |
+| 6     | 500   | 3,000      | 4,800          | $0.25 | $1.20           | $5         |
+| 9     | 1,400 | 8,400      | 13,440         | $0.35 | $4.70           | $20        |
+| 12    | 3,500 | 21,000     | 33,600         | $0.50 | $16.80          | $75        |
 
-**Year 1 Total Ad Revenue:** **$3,000-5,000** (conservative estimate; **Assumption:** CPMs grow as traffic quality improves and direct ad sales begin in Q3-Q4)
+**Year 1 Total Ad Revenue:** **$1,000-2,000** (**Assumption:** Programmatic revenue from AdSense will be minimal, likely $100-300 in Year 1. This projection is heavily dependent on securing **2-4 direct ad sales deals in H2** from local companies at a flat rate, which is critical for this stream's viability.)
 
 **Year 2-3 Projections:**
 
-- **Year 2:** $15,000-25,000 (MAU grows to 10K-15K; CPM improves to $1.50-2; direct ad sales)
-- **Year 3:** $40,000-60,000 (MAU grows to 20K-30K; CPM improves to $2-3; established ad sales team)
+- **Year 2:** $8,000-12,000 (MAU grows; CPM improves; focus on direct ad sales)
+- **Year 3:** $20,000-30,000 (Established ad sales process)
 
-### 5.3 Revenue Stream 2: Paid Job Postings (Month 6+, $3,000-5,000 Year 1)
+### 5.3 Revenue Stream 2: Paid Job Postings (Month 6+, $2,000-3,500 Year 1)
 
 **Pricing Tiers (Localized for Syrian Market):**
 
 | Tier                        | Price        | Features                                     | Target Customer             | Year 1 Target Sold |
 | --------------------------- | ------------ | -------------------------------------------- | --------------------------- | ------------------ |
-| **Free**                    | $0           | 1 job/month, basic listing, 30-day duration  | SMEs, startups, NGOs        | 200-400 companies  |
-| **Featured Listing**        | $10-15/post  | Top of results, highlighted, 60-day duration | Growing SMEs                | 150-250 posts      |
-| **Urgent Hire Badge**       | $5-8/post    | "Urgent" badge, faster applications          | Companies with urgent needs | 100-150 posts      |
-| **Multi-Post Package**      | $40/5 posts  | Bulk discount ($8/post avg), 90-day duration | Active recruiters           | 20-40 packages     |
-| **Premium Company Profile** | $30-50/month | Unlimited posts, company branding, analytics | Large companies, NGOs       | 10-20 companies    |
+| **Free**                    | $0           | 1 job/month, basic listing, 30-day duration  | SMEs, startups, NGOs        | 150-300 companies  |
+| **Featured Listing**        | $5-10/post   | Top of results, highlighted, 60-day duration | Growing SMEs                | 100-200 posts      |
+| **Urgent Hire Badge**       | $3-5/post    | "Urgent" badge, faster applications          | Companies with urgent needs | 80-120 posts       |
+| **Multi-Post Package**      | $25/5 posts  | Bulk discount ($5/post avg), 90-day duration | Active recruiters           | 15-30 packages     |
+| **Premium Company Profile** | $20-35/month | Unlimited posts, company branding, analytics | Large companies, NGOs       | 5-15 companies     |
 
 **Unit Economics Assumptions:**
 
 - **Free-to-paid conversion rate:** **5-10%** (industry standard for freemium job boards)
-- **Average transaction value:** **$12** (weighted average across tiers)
+- **Average transaction value:** **$8** (weighted average across tiers)
 - **Repeat purchase rate:** **30-40%** (companies re-post every 2-3 months)
 
 **Year 1 Calculation (Month 6-12 average):**
 
-- **Active companies on platform (Month 12):** 500
-- **Companies posting jobs monthly:** 200 (40% of 500)
-- **Free posts:** 140 (70% of 200)
-- **Paid posts/upgrades:** 60 (30% of 200, split across tiers)
-  - Featured: 30 posts × $12 = $360
-  - Urgent: 20 posts × $6 = $120
-  - Multi-post: 5 packages × $40 = $200
-  - Premium subs: 5 companies × $40 = $200
-- **Monthly revenue (Month 12):** **$880**
-- **Ramp-up (Month 6-12 average):** **$400-600/month**
-- **Year 1 Total (7 months active):** **$3,000-5,000**
+- **Active companies on platform (Month 12):** 400
+- **Companies posting jobs monthly:** 160 (40% of 400)
+- **Free posts:** 120 (75% of 160)
+- **Paid posts/upgrades:** 40 (25% of 160, split across tiers)
+  - Featured: 20 posts × $8 = $160
+  - Urgent: 10 posts × $4 = $40
+  - Multi-post: 3 packages × $25 = $75
+  - Premium subs: 3 companies × $30 = $90
+- **Monthly revenue (Month 12):** **$365**
+- **Ramp-up (Month 6-12 average):** **$200-300/month**
+- **Year 1 Total (7 months active):** **$2,000-3,500**
 
 **Year 2-3 Projections:**
 
-- **Year 2:** $18,000-28,000 (1,500-2,000 companies, higher conversion, better product-market fit)
-- **Year 3:** $45,000-65,000 (3,000-4,000 companies, established pricing power)
+- **Year 2:** $15,000-25,000 (1,000-1,500 companies, higher conversion, better product-market fit)
+- **Year 3:** $40,000-60,000 (2,500-3,500 companies, established pricing power)
 
 ### 5.4 Revenue Stream 3: Premium Job Seeker Features (Month 9+, $2,000 Year 1)
 
@@ -418,10 +417,11 @@ graph TB
 **Assumptions:**
 
 - **Premium conversion rate:** **0.5-1%** of free users (conservative; Tinder ~3%, LinkedIn ~25%, but Syrian market less mature)
-- **Total registered users (Month 12):** 20,000
-- **MAU (Month 12):** 4,000
-- **Premium subscribers:** 20-40 (0.5-1% of MAU)
+- **Total registered users (Month 12):** 8,000
+- **MAU (Month 12):** 3,500
+- **Premium subscribers:** 15-35 (0.5-1% of MAU)
 - **Average revenue per premium user:** **$4/month**
+- **Note:** This stream is considered **experimental** in Year 1, with the primary revenue focus on B2B streams (paid postings). Success will depend on proving significant value to job seekers in a market with low willingness to pay for such features.
 
 **Year 1 Calculation (Month 9-12 active):**
 
@@ -440,16 +440,16 @@ graph TB
 
 | Revenue Stream          | Year 1 (Gross)    | Year 2 (Gross)     | Year 3 (Gross)       |
 | ----------------------- | ----------------- | ------------------ | -------------------- |
-| **Display Ads**         | $3,000-5,000      | $15,000-25,000     | $40,000-60,000       |
-| **Paid Job Postings**   | $3,000-5,000      | $18,000-28,000     | $45,000-65,000       |
-| **Premium Features**    | $2,000            | $8,000-12,000      | $20,000-30,000       |
-| **TOTAL GROSS REVENUE** | **$8,000-12,000** | **$41,000-65,000** | **$105,000-155,000** |
+| **Display Ads**         | $1,000-2,000      | $8,000-12,000      | $20,000-30,000       |
+| **Paid Job Postings**   | $2,000-3,500      | $15,000-25,000     | $40,000-60,000       |
+| **Premium Features**    | $1,500-2,500      | $8,000-12,000      | $20,000-30,000       |
+| **TOTAL GROSS REVENUE** | **$4,500-8,000**  | **$31,000-49,000** | **$80,000-120,000**  |
 
 **Revenue Mix Evolution:**
 
-- **Year 1:** 40% Ads, 40% Paid Postings, 20% Premium
-- **Year 2:** 35% Ads, 40% Paid Postings, 25% Premium
-- **Year 3:** 40% Ads, 45% Paid Postings, 15% Premium
+- **Year 1:** 25% Ads, 50% Paid Postings, 25% Premium
+- **Year 2:** 25% Ads, 50% Paid Postings, 25% Premium
+- **Year 3:** 25% Ads, 50% Paid Postings, 25% Premium
 
 ---
 
@@ -461,8 +461,8 @@ graph TB
 
 - **Launch Month:** Month 3 (after 3-month MVP development)
 - **Initial user base:** 200-300 (friends, family, direct outreach)
-- **Growth rate:** 25-40% month-over-month (Months 3-9), then 15-25% (Months 9-12) as base grows
-- **Activation rate:** 20-30% (registered users → monthly active users)
+- **Growth rate:** Initial growth modest at 20-30% month-over-month (Months 3-8), accelerating to 30-50% (Months 9-12) as network effects and word-of-mouth begin.
+- **Activation rate:** 25-35% (registered users → monthly active users)
 - **Retention:** 30-day retention = 35-45%, 90-day retention = 20-30%
 
 **Month-by-Month Year 1 Projection:**
@@ -470,19 +470,19 @@ graph TB
 | Month             | Total Registered | New This Month | MAU         | Notes                                 |
 | ----------------- | ---------------- | -------------- | ----------- | ------------------------------------- |
 | **0-2**           | 0                | 0              | 0           | MVP development phase                 |
-| **3 (Launch)**    | 300              | 300            | 200         | Launch: direct outreach, social media |
-| **4**             | 500              | 200            | 300         | Early adopters, word-of-mouth         |
-| **5**             | 800              | 300            | 450         | Organic growth, partnerships begin    |
-| **6**             | 1,200            | 400            | 650         | Paid job postings launch              |
-| **7**             | 1,700            | 500            | 900         | Growing awareness                     |
-| **8**             | 2,400            | 700            | 1,200       | SEO kicking in                        |
-| **9**             | 3,400            | 1,000          | 1,700       | Premium features launch               |
-| **10**            | 4,800            | 1,400          | 2,400       | Network effects starting              |
-| **11**            | 6,800            | 2,000          | 3,200       | Holiday hiring surge                  |
-| **12**            | 10,000           | 3,200          | 4,000       | Year-end momentum                     |
-| **12+ (stretch)** | 20,000-25,000    | -              | 4,000-5,000 | If growth accelerates                 |
+| **3 (Launch)**    | 250              | 250            | 150         | Launch: direct outreach, social media |
+| **4**             | 400              | 150            | 250         | Early adopters, word-of-mouth         |
+| **5**             | 600              | 200            | 350         | Organic growth, partnerships begin    |
+| **6**             | 850              | 250            | 500         | Paid job postings launch              |
+| **7**             | 1,200            | 350            | 700         | Growing awareness                     |
+| **8**             | 1,700            | 500            | 1,000       | SEO kicking in                        |
+| **9**             | 2,500            | 800            | 1,400       | Premium features launch               |
+| **10**            | 3,700            | 1,200          | 2,000       | Network effects starting              |
+| **11**            | 5,500            | 1,800          | 2,800       | Holiday hiring surge                  |
+| **12**            | 8,000            | 2,500          | 3,500       | Year-end momentum                     |
+| **12+ (stretch)** | 15,000           | -              | 4,000-5,000 | If growth accelerates                 |
 
-**Year 1 Target (Conservative Range):** **15,000-25,000 total registered users, 3,000-5,000 MAU at Month 12**
+**Year 1 Target (Conservative Range):** **8,000-15,000 total registered users, 2,500-4,000 MAU at Month 12**
 
 ### 6.2 Acquisition Channel Breakdown
 
@@ -543,19 +543,19 @@ graph TB
 
 **Scenario A: Conservative (60% probability)**
 
-| Metric                               | Year 1     | Year 2      | Year 3       |
-| ------------------------------------ | ---------- | ----------- | ------------ |
-| **Total Registered Users**           | 15,000     | 60,000      | 150,000      |
-| **Monthly Active Users (MAU)**       | 3,000      | 12,000      | 30,000       |
-| **ARPU (Avg Revenue Per User/Year)** | $0.53      | $0.68       | $0.70        |
-| **Display Ads**                      | $3,000     | $15,000     | $40,000      |
-| **Paid Job Postings**                | $3,000     | $18,000     | $45,000      |
-| **Premium Features**                 | $2,000     | $8,000      | $20,000      |
-| **TOTAL GROSS REVENUE**              | **$8,000** | **$41,000** | **$105,000** |
-| **Total Costs**                      | $20,000    | $45,000     | $80,000      |
-| **EBITDA**                           | ($12,000)  | ($4,000)    | $25,000      |
+| Metric                               | Year 1      | Year 2      | Year 3      |
+| ------------------------------------ | ----------- | ----------- | ----------- |
+| **Total Registered Users**           | 8,000       | 40,000      | 100,000     |
+| **Monthly Active Users (MAU)**       | 2,500       | 10,000      | 25,000      |
+| **ARPU (Avg Revenue Per User/Year)** | $0.56       | $0.78       | $0.80       |
+| **Display Ads**                      | $1,000      | $6,000      | $15,000     |
+| **Paid Job Postings**                | $2,000      | $15,000     | $40,000     |
+| **Premium Features**                 | $1,500      | $10,000     | $25,000     |
+| **TOTAL GROSS REVENUE**              | **$4,500**  | **$31,000** | **$80,000** |
+| **Total Costs**                      | $20,000     | $45,000     | $75,000     |
+| **EBITDA**                           | ($15,500)   | ($14,000)   | $5,000      |
 
-**Rationale:** Slow early adoption, conservative conversion rates, 18-24 month path to break-even.
+**Rationale:** Slow early adoption, very conservative conversion rates, 28-32 month path to break-even.
 
 ---
 
@@ -563,35 +563,35 @@ graph TB
 
 | Metric                               | Year 1      | Year 2      | Year 3       |
 | ------------------------------------ | ----------- | ----------- | ------------ |
-| **Total Registered Users**           | 20,000      | 80,000      | 200,000      |
-| **Monthly Active Users (MAU)**       | 4,000       | 16,000      | 40,000       |
-| **ARPU (Avg Revenue Per User/Year)** | $0.60       | $0.81       | $0.88        |
-| **Display Ads**                      | $4,000      | $20,000     | $50,000      |
-| **Paid Job Postings**                | $4,000      | $23,000     | $55,000      |
-| **Premium Features**                 | $2,000      | $10,000     | $25,000      |
-| **TOTAL GROSS REVENUE**              | **$10,000** | **$53,000** | **$130,000** |
+| **Total Registered Users**           | 12,000      | 60,000      | 150,000      |
+| **Monthly Active Users (MAU)**       | 3,500       | 15,000      | 35,000       |
+| **ARPU (Avg Revenue Per User/Year)** | $0.54       | $0.82       | $0.87        |
+| **Display Ads**                      | $1,500      | $8,000      | $20,000      |
+| **Paid Job Postings**                | $3,000      | $25,000     | $60,000      |
+| **Premium Features**                 | $2,000      | $16,000     | $50,000      |
+| **TOTAL GROSS REVENUE**              | **$6,500**  | **$49,000** | **$130,000** |
 | **Total Costs**                      | $20,000     | $50,000     | $90,000      |
-| **EBITDA**                           | ($10,000)   | $3,000      | $40,000      |
+| **EBITDA**                           | ($13,500)   | ($1,000)    | $40,000      |
 
-**Rationale:** Moderate adoption, product-market fit achieved Month 9-12, break-even Month 18-20.
+**Rationale:** Moderate adoption, product-market fit achieved Month 12-15, break-even Month 24-28.
 
 ---
 
 **Scenario C: Optimistic (10% probability)**
 
-| Metric                               | Year 1      | Year 2      | Year 3       |
-| ------------------------------------ | ----------- | ----------- | ------------ |
-| **Total Registered Users**           | 25,000      | 100,000     | 250,000      |
-| **Monthly Active Users (MAU)**       | 5,000       | 20,000      | 50,000       |
-| **ARPU (Avg Revenue Per User/Year)** | $0.80       | $1.30       | $1.24        |
-| **Display Ads**                      | $5,000      | $25,000     | $60,000      |
-| **Paid Job Postings**                | $5,000      | $28,000     | $65,000      |
-| **Premium Features**                 | $2,000      | $12,000     | $30,000      |
-| **TOTAL GROSS REVENUE**              | **$12,000** | **$65,000** | **$155,000** |
-| **Total Costs**                      | $20,000     | $55,000     | $100,000     |
-| **EBITDA**                           | ($8,000)    | $10,000     | $55,000      |
+| Metric                               | Year 1      | Year 2       | Year 3       |
+| ------------------------------------ | ----------- | ------------ | ------------ |
+| **Total Registered Users**           | 15,000      | 80,000       | 200,000      |
+| **Monthly Active Users (MAU)**       | 4,000       | 20,000       | 50,000       |
+| **ARPU (Avg Revenue Per User/Year)** | $0.53       | $0.94        | $1.00        |
+| **Display Ads**                      | $2,000      | $12,000      | $30,000      |
+| **Paid Job Postings**                | $3,500      | $38,000      | $90,000      |
+| **Premium Features**                 | $2,500      | $25,000      | $80,000      |
+| **TOTAL GROSS REVENUE**              | **$8,000**  | **$75,000**  | **$200,000** |
+| **Total Costs**                      | $20,000     | $60,000      | $120,000     |
+| **EBITDA**                           | ($12,000)   | $15,000      | $80,000      |
 
-**Rationale:** Strong product-market fit, viral growth, partnerships accelerate adoption, break-even Month 14-16.
+**Rationale:** Strong product-market fit, viral growth, partnerships accelerate adoption, break-even Month 20-22.
 
 ### 7.2 Consolidated Financial Summary
 
@@ -599,64 +599,64 @@ graph TB
 
 | Metric                         | Conservative (60%) | Realistic (30%) | Optimistic (10%) |
 | ------------------------------ | ------------------ | --------------- | ---------------- |
-| **Total Registered Users**     | 15,000             | 20,000          | 25,000           |
-| **Monthly Active Users (MAU)** | 3,000              | 4,000           | 5,000            |
-| **ARPU ($/user/year)**         | $0.53              | $0.60           | $0.80            |
-| **Display Ads Revenue**        | $3,000             | $4,000          | $5,000           |
-| **Paid Job Postings Revenue**  | $3,000             | $4,000          | $5,000           |
-| **Premium Features Revenue**   | $2,000             | $2,000          | $2,000           |
-| **TOTAL GROSS REVENUE**        | **$8,000**         | **$10,000**     | **$12,000**      |
+| **Total Registered Users**     | 8,000              | 12,000          | 15,000           |
+| **Monthly Active Users (MAU)** | 2,500              | 3,500           | 4,000            |
+| **ARPU ($/user/year)**         | $0.56              | $0.54           | $0.53            |
+| **Display Ads Revenue**        | $1,000             | $1,500          | $2,000           |
+| **Paid Job Postings Revenue**  | $2,000             | $3,000          | $3,500           |
+| **Premium Features Revenue**   | $1,500             | $2,000          | $2,500           |
+| **TOTAL GROSS REVENUE**        | **$4,500**         | **$6,500**      | **$8,000**       |
 | **Total Costs**                | $20,000            | $20,000         | $20,000          |
-| **EBITDA**                     | ($12,000)          | ($10,000)       | ($8,000)         |
-| **Break-Even Month**           | 24                 | 20              | 16               |
+| **EBITDA**                     | ($15,500)          | ($13,500)       | ($12,000)        |
+| **Break-Even Month**           | 30                 | 26              | 22               |
 
 **Year 2 - Three Scenario Comparison:**
 
 | Metric                         | Conservative (60%) | Realistic (30%) | Optimistic (10%) |
 | ------------------------------ | ------------------ | --------------- | ---------------- |
-| **Total Registered Users**     | 60,000             | 80,000          | 100,000          |
-| **Monthly Active Users (MAU)** | 12,000             | 16,000          | 20,000           |
-| **ARPU ($/user/year)**         | $0.68              | $0.81           | $1.30            |
-| **Display Ads Revenue**        | $15,000            | $20,000         | $25,000          |
-| **Paid Job Postings Revenue**  | $18,000            | $23,000         | $28,000          |
-| **Premium Features Revenue**   | $8,000             | $10,000         | $12,000          |
-| **TOTAL GROSS REVENUE**        | **$41,000**        | **$53,000**     | **$65,000**      |
-| **Total Costs**                | $45,000            | $50,000         | $55,000          |
-| **EBITDA**                     | ($4,000)           | $3,000          | $10,000          |
-| **Status**                     | Near break-even    | Break-even      | Profitable       |
+| **Total Registered Users**     | 40,000             | 60,000          | 80,000           |
+| **Monthly Active Users (MAU)** | 10,000             | 15,000          | 20,000           |
+| **ARPU ($/user/year)**         | $0.78              | $0.82           | $0.94            |
+| **Display Ads Revenue**        | $6,000             | $8,000          | $12,000          |
+| **Paid Job Postings Revenue**  | $15,000            | $25,000         | $38,000          |
+| **Premium Features Revenue**   | $10,000            | $16,000         | $25,000          |
+| **TOTAL GROSS REVENUE**        | **$31,000**        | **$49,000**     | **$75,000**      |
+| **Total Costs**                | $45,000            | $50,000         | $60,000          |
+| **EBITDA**                     | ($14,000)          | ($1,000)        | $15,000          |
+| **Status**                     | Pre-break-even     | Near break-even | Profitable       |
 
 **Year 3 - Three Scenario Comparison:**
 
 | Metric                         | Conservative (60%) | Realistic (30%) | Optimistic (10%)  |
 | ------------------------------ | ------------------ | --------------- | ----------------- |
-| **Total Registered Users**     | 150,000            | 200,000         | 250,000           |
-| **Monthly Active Users (MAU)** | 30,000             | 40,000          | 50,000            |
-| **ARPU ($/user/year)**         | $0.70              | $0.88           | $1.24             |
-| **Display Ads Revenue**        | $40,000            | $50,000         | $60,000           |
-| **Paid Job Postings Revenue**  | $45,000            | $55,000         | $65,000           |
-| **Premium Features Revenue**   | $20,000            | $25,000         | $30,000           |
-| **TOTAL GROSS REVENUE**        | **$105,000**       | **$130,000**    | **$155,000**      |
-| **Total Costs**                | $80,000            | $90,000         | $100,000          |
-| **EBITDA**                     | $25,000            | $40,000         | $55,000           |
+| **Total Registered Users**     | 100,000            | 150,000         | 200,000           |
+| **Monthly Active Users (MAU)** | 25,000             | 35,000          | 50,000            |
+| **ARPU ($/user/year)**         | $0.80              | $0.87           | $1.00             |
+| **Display Ads Revenue**        | $15,000            | $20,000         | $30,000           |
+| **Paid Job Postings Revenue**  | $40,000            | $60,000         | $90,000           |
+| **Premium Features Revenue**   | $25,000            | $50,000         | $80,000           |
+| **TOTAL GROSS REVENUE**        | **$80,000**        | **$130,000**    | **$200,000**      |
+| **Total Costs**                | $75,000            | $90,000         | $120,000          |
+| **EBITDA**                     | $5,000             | $40,000         | $80,000           |
 | **Status**                     | Profitable         | Profitable      | Highly Profitable |
 
 ### 7.3 Year 1 Cost Breakdown ($20,000 Fixed Budget)
 
 | Category                                 | Amount      | % of Budget | Details                                                                     |
 | ---------------------------------------- | ----------- | ----------- | --------------------------------------------------------------------------- |
-| **Development (Founder/Developer Time)** | $5,000      | 25%         | 3-month MVP + ongoing maintenance (founder part-time + developer full time) |
+| **Founder's Contribution**               | (Sweat Equity) | N/A         | Founder's time is full-time, not included in cash budget.                   |
+| **MVP Development (Dev & Design)**       | $8,000      | 40%         | Cash cost for contract developers and UI/UX designers for 3-month MVP build.|
 | **Infrastructure & Tools**               | $2,500      | 12.5%       | Hetzner VPS ($800/yr), OpenRouter AI ($500/yr), domain, tools               |
-| **UI/UX Design (Contract)**              | $3,000      | 15%         | Part-time contractor, 3 months design + iterations                          |
 | **Marketing & Ads**                      | $6,000      | 30%         | Facebook/Google ads ($3K), content creation ($2K), partnerships ($1K)       |
 | **Legal & Compliance**                   | $1,500      | 7.5%        | Syrian business registration, ToS/Privacy Policy drafting                   |
-| **Payment Processing Fees**              | $500        | 2.5%        | Stripe/PayPal fees (est. 3% of $10K revenue)                                |
-| **Contingency / Buffer**                 | $1,500      | 7.5%        | Unexpected costs, currency fluctuations                                     |
+| **Payment Processing Fees**              | $800        | 4%          | Estimated fees from local gateways (e.g., Syriatel Cash) at a higher rate (5-8%). |
+| **Contingency / Buffer**                 | $1,200      | 6%          | Unexpected costs, currency fluctuations                                     |
 | **TOTAL**                                | **$20,000** | **100%**    |                                                                             |
 
 **Key Assumptions:**
 
-- Founder works part-time (sweat equity, minimal cash compensation)
-- No full-time hires Year 1 (contractor only for design/development)
+- Founder works full-time (sweat equity, no cash compensation in Year 1)
+- No full-time hires Year 1 (contractors only for MVP)
 - Ultra-lean infrastructure (Hetzner/Hostinger VPS, not AWS)
 - Marketing budget focuses on low-cost channels (organic + small paid ads)
 
@@ -796,33 +796,51 @@ graph TB
 
 ---
 
+### 8.5 Building Trust in a Low-Trust Market
+
+A key challenge is overcoming the cultural reliance on "wasta" (personal connections). Technology alone is not enough; the platform must build trust to encourage merit-based hiring.
+
+**Tactics:**
+
+1.  **Company Verification:**
+    *   Implement a "Verified Employer" badge for companies that complete a simple validation process (e.g., confirming business registration). This signals legitimacy to job seekers and filters out spam.
+
+2.  **Promote Success Stories:**
+    *   Heavily feature testimonials and case studies from both companies and job seekers who found success through the platform. This provides social proof that the model works.
+
+3.  **Educational Content:**
+    *   Create content (in Arabic) that directly addresses the "wasta" system. Frame it commercially: highlight the business costs of bad hires from nepotism versus the long-term value of finding the best-qualified candidate.
+
+4.  **Transparency:**
+    *   Ensure features like application tracking are reliable. Providing users with visibility into the process, even if it's a "rejection," builds more trust than silence.
+
 ## 9. Milestone Roadmap
 
 ### 9.1 Phase 1: MVP Development (Months 0-3)
 
 **Month 1:**
 
-- ✅ Finalize MVP spec & user stories
-- ✅ Setup development environment (Next.js, NestJS, PostgreSQL)
-- ✅ Design system & UI components (shadcn/ui)
-- ✅ Landing page + waitlist
+- ○ Finalize MVP spec & user stories
+- ○ Setup development environment (Next.js, NestJS, PostgreSQL)
+- ○ Design system & UI components (shadcn/ui)
+- ○ Landing page + waitlist
 - **Deliverable:** Development environment ready, 100 waitlist signups
 
 **Month 2:**
 
-- ✅ Build core features: user auth, CV builder, job listings, search
-- ✅ OpenRouter AI integration (CV suggestions, job matching)
-- ✅ Job aggregation (scrape LinkedIn)
-- ✅ Google AdSense integration
+- ○ Build core features: user auth, CV builder, job listings, search
+- ○ OpenRouter AI integration (CV suggestions, job matching)
+- ○ Job aggregation (scrape LinkedIn)
+- ○ Google AdSense integration
 - **Deliverable:** Functional MVP (70% feature complete), 200 waitlist signups
 
 **Month 3:**
 
-- ✅ Complete MVP: applications, company profiles, analytics
-- ✅ Mobile responsive optimization
-- ✅ User testing with 20-30 beta testers
-- ✅ Bug fixes & performance optimization
-- ✅ Soft launch to waitlist
+- ○ Complete MVP: applications, company profiles, analytics
+- ○ Mobile responsive optimization
+- ○ User testing with 20-30 beta testers
+- ○ Bug fixes & performance optimization
+- ○ Soft launch to waitlist
 - **Deliverable:** Public launch (MVP 100% complete), 300-500 registered users
 
 **Budget:** $8,000 (development $5K, design $3K)
@@ -996,7 +1014,8 @@ graph TB
 | **Monetization Challenges**    | Medium     | High   | Multiple revenue streams, conservative pricing, iterate based on data            | ⚠️ Monitoring |
 | **Technical Execution Delays** | Low        | Medium | Experienced founder, proven tech stack, 3-month buffer                           | ✅ Mitigated  |
 | **Syrian Market Instability**  | Medium     | High   | Diaspora focus (backup market), regional expansion (Lebanon/Jordan)              | ⚠️ External   |
-| **Payment Processing Issues**  | Medium     | Medium | Multiple gateways (Stripe, PayPal, Syriatel Cash), crypto option                 | ✅ Planned    |
+| **Payment Processing Issues**  | High       | High   | Primary reliance on local gateways (Syriatel Cash) & direct invoicing. Stripe/PayPal not viable for local market. | ✅ Planned    |
+| **Talent Flight / Brain Drain**| Medium     | Medium | Remote work features provide a hedge, capturing value by connecting talent to international opportunities. | ✅ Planned    |
 | **Funding Challenges**         | Medium     | High   | Bootstrap-friendly model ($20K Year 1), break-even path without external funding | ✅ Mitigated  |
 
 ### 11.2 Detailed Risk Mitigation
@@ -1271,7 +1290,7 @@ graph TB
 
 ### Immediate Next Steps (Months 0-3)
 
-- [x] Finalize MVP specification
+- [ ] Finalize MVP spec & user stories
 - [ ] Begin MVP development (Month 1)
 - [ ] Launch waitlist and landing page (Month 1)
 - [ ] Acquire 300-500 waitlist signups (Months 1-3)
@@ -1342,9 +1361,9 @@ graph TB
 **For Investor Inquiries:**  
 We welcome discussions with potential investors, grant funders, and strategic partners at any stage. While our structured fundraising will begin post-launch (Month 9+), we're open to exploratory conversations now or anytime. We are seeking $40,000-60,000 in grant funding, impact investment, or equity investment to accelerate growth and achieve profitability by Year 2.
 
-**Document Version:** 2.0 (Revised for Investor Readiness)  
+**Document Version:** 1.0 (Initial Draft for Review)  
 **Date:** November 4, 2025  
-**Status:** Pre-launch (MVP development in progress)
+**Status:** Concept Stage (Pre-Development)
 
 ---
 
